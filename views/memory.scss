@@ -44,7 +44,6 @@ footer div {
   background-position: 0 -0;
   width: 260px;
   height: 199px; } */
-
 /* type */
 h1 {
   color: white;
@@ -65,9 +64,10 @@ h1 {
   /* card status */ }
 
 .card:hover {
-  cursor: pointer; }
+  cursor: pointer;
+  border: 2.5px solid #F52887;}
 
-.card .question, .card .answer {
+.card .value {
   display: none;
   /* hide question and answer */
   font-size: 14.5px; }
@@ -96,9 +96,6 @@ h1 {
 .card.disabled {
   background-color: gray;
   color: #666666; }
-
-.cat-card {
-  background-color: dodgerblue; }
 
 /* jeopardy */
 .scoreboard-container {
