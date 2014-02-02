@@ -1,13 +1,17 @@
-$(document).ready(function() {
-  var $cards = $(".card") //1
-
-  $cards.on("click", function(){ //2
+$(document).ready(function () {
+  var $cards = $(".card");
+  var count = 0; //set counter
+  $cards.on("click", function () { //2
+    count++;
     var $this = $(this);
-    // if(!$this.hasClass("up") && !$this.hasClass("matched")) {
-    //   if(!$this.hasClass("down")) {
-        // 3 change to state chosen
-        $this.addClass("value").addClass("up"); 
-        $this.find(".value").fadeIn(); //show question
+    if (count <= 2) {
+      $this.addClass("value").addClass("up");
+      $this.find(".value").fadeIn(); //show number
+    }
+  });
+});
+
+
         // $this.find(".value").fadeOut();    //hide value
     //     // 3 change others state to disabled
     //     $cards.not(".chosen").addClass("disabled");
@@ -23,7 +27,3 @@ $(document).ready(function() {
     //     //change disabled cards to normal
     //     $cards.not(".played").removeClass("disabled");
     //   }
-    // }
-
-  });
-});
