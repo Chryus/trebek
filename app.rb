@@ -24,14 +24,9 @@ class Gambit < Sinatra::Application
     haml :game_form
   end
 
-<<<<<<< HEAD
-  post "/games/" do
-    @game = Game.new(Deck.new("data/#{params[:deck_file]}.yml"))
-=======
   post "/games/jeopardy/" do
     # @game = Game.new(Deck.new("data/#{params[:deck_file]}.yml"))
     haml :results
->>>>>>> 045aa9218ee3fd8566469ad6511864aa8915916e
   end
 
   get "/games/:type/:deck_file" do
