@@ -64,8 +64,7 @@ h1 {
   /* card status */ }
 
 .card:hover {
-  cursor: pointer;
-  border: 2.5px solid #F52887;}
+  cursor: pointer; }
 
 .card .value {
   display: none;
@@ -85,6 +84,10 @@ h1 {
 
 .card .cat {
   font-weight: 900; }
+  
+.card.up {
+  border: 2.5px solid #F52887;
+}
 
 .card.chosen {
   border: 2.5px solid yellow; }
