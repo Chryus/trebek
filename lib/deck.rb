@@ -36,7 +36,3 @@ end
 # war is the easiest
 
 
-
-=======
-end
->>>>>>> 045aa9218ee3fd8566469ad6511864aa8915916e
