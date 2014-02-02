@@ -4,9 +4,13 @@ $(document).ready(function () {
   $cards.on("click", function () { //2
     count++;
     var $this = $(this);
+    var match = [];
     if (count <= 2) {
       $this.addClass("value").addClass("up");
-      $this.find(".value").fadeIn(); //show number
+      match.push($this.find(".value").fadeIn()); //show number
+      console.log(match.length);
+    } else if (match[0] === match[1]) {
+      console.log('confetti');
     }
   });
 });
