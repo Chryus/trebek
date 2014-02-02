@@ -26,14 +26,17 @@ end
 #   haml :"#{params[:type]}2"
 # end
 
-1. create a view
-2. create a deckfile in the datafolder in yaml
-3. make your javascript file just like the jeopardy file
-4. make css file 
+# 1. create a view
+# 2. create a deckfile in the datafolder in yaml
+# 3. make your javascript file just like the jeopardy file
+# 4. make css file 
 
-all the cards are in the view 
-pic a game with suit and number
-war is the easiest
+# all the cards are in the view 
+# pic a game with suit and number
+# war is the easiest
 
 
 
+=======
+end
+>>>>>>> 045aa9218ee3fd8566469ad6511864aa8915916e
