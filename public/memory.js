@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var $cards = $(".card");
+  var $cards = $(".card.col6");
   var count = 0; //set counter
   $cards.on("click", function () { //2
     count++;
@@ -7,10 +7,15 @@ $(document).ready(function () {
     var match = [];
     if (count <= 2) {
       $this.addClass("value").addClass("up");
-      match.push($this.find(".value").fadeIn()); //show number
+      $this.find(".value").fadeIn(); //show number
+      match.push($this.innerText);
       console.log(match.length);
-    } else if (match[0] === match[1]) {
-      console.log('confetti');
+      if (match.length === 2) {
+        if (match[0] === match[1]) {
+          console.log('confetti');
+        }
+        else match.length = 0;
+      }
     }
   });
 });
