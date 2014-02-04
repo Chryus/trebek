@@ -12,12 +12,12 @@ var matches = []; //set match array
       if (count === 2) {
         if (matches[matches.length-2] === matches[matches.length-1]) {
           console.log('confetti');
-          var $up = $cards.filter(".up")
-          $up.addClass("disabled");
+          var $up = $cards.filter(".up");
+          $up.addClass("disabled").removeClass("up");
           var score = matches.length/2 * 10
-          $('div').find('.score').text(score)
+          $('div').find('.score').text(score);
         }else{
-          $cards.find(".value").fadeOut();    
+          $cards.filter(".up").find(".value").fadeOut();    
         }
         count = 0;
       }
