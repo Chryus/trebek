@@ -1,24 +1,29 @@
 $(document).ready(function () {
 var $cards = $(".card.col6");
 var count = 0; //set counter
-var user_picks = []; //set match array
+var matches = []; //set match array
   $cards.on("click", function () { //2
     count++;
     var $this = $(this);
-    if (count <= 2) {
-      $this.addClass("value").addClass("up"); // add classes
-      $this.find(".value").fadeIn(); //show number
-      user_picks.push($this.find(".value").text().trim()); //push value to array
-      console.log(user_picks.length);
-      if (user_picks.length === 2 && user_picks[0] === user_picks[1]) {
-        console.log('confetti');
-        if ($cards.hasClass("up")) {
-          $this.addClass("disabled");
-        //user_picks.length = 0;
+      if (count <= 2) {
+        $this.addClass("value").addClass("up"); // add classes
+        $this.find(".value").fadeIn(); //show number
+        matches.push($this.find(".value").text().trim()); //push value to array
+      if (count === 2) {
+        if (matches[matches.length-2] === matches[matches.length-1]) {
+          console.log('confetti');
+          var $up = $cards.filter(".up")
+          $up.addClass("disabled");
+          var score = matches.length/2 * 10
+          $('div').find('.score').text(score)
+        }else{
+          $cards.find(".value").fadeOut();    
         }
-      } 
+        count = 0;
+      }
     }
   });
+
 });
 
 // if($(this).find(".question").is(":visible"))
