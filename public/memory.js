@@ -1,29 +1,31 @@
 $(document).ready(function () {
-var $cards = $(".card.col6");
-var count = 0; //set counter
-var matches = []; //set match array
+  var $cards = $(".card.col6");
+  var count = 0; //set counter
+  var score = 0;
+  var matches = []; //set match array
   $cards.on("click", function () { //2
     count++;
     var $this = $(this);
-      if (count <= 2) {
-        $this.addClass("value").addClass("up"); // add classes
-        $this.find(".value").fadeIn(); //show number
-        matches.push($this.find(".value").text().trim()); //push value to array
+    if (count <= 2) {
+      $this.addClass("up"); // add classes
+      $this.find(".value").fadeIn(); //show number
+      matches.push($this.find(".value").text().trim()); //push value to array
       if (count === 2) {
-        if (matches[matches.length-2] === matches[matches.length-1]) {
-          console.log('confetti');
+        if (matches[matches.length - 2] === matches[matches.length - 1]) {
           var $up = $cards.filter(".up");
+          if (!$up.filter(".disabled")) {
+            score += 10;
+            $('div').find('.score').text(score);
+          }
           $up.addClass("disabled").removeClass("up");
-          var score = matches.length/2 * 10
-          $('div').find('.score').text(score);
-        }else{
-          $cards.filter(".up").find(".value").fadeOut();    
+        } else {
+          $cards.filter(".up").find(".value").fadeOut();
+          $cards.filter(".up").removeClass("up");
         }
         count = 0;
       }
     }
   });
-
 });
 
 // if($(this).find(".question").is(":visible"))
